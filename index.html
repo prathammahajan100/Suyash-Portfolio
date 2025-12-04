@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pratham Mahajan — Student Portfolio</title>
+  <meta name="author" content="Pratham Mahajan">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#071428;
+      --card:#081827;
+      --muted:#9fb0c7;
+      --accent:#6ee7b7;
+      --accent-2:#60a5fa;
+      --glass: rgba(255,255,255,0.03);
+      --maxw:1100px;
+      --gap:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,#041021 0%, #071428 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.45;
+      padding:26px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+      background: linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.008));
+      border-radius:12px;
+      padding:22px;
+      box-shadow: 0 12px 40px rgba(2,6,23,0.7);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    header{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:14px;
+    }
+    .brand{display:flex;gap:12px;align-items:center}
+    .avatar{
+      width:64px;height:64px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;color:#042033;font-size:20px;
+      box-shadow: 0 8px 22px rgba(6,12,20,0.6);
+    }
+    h1{margin:0;font-size:20px}
+    p.lead{margin:0;color:var(--muted);font-size:13px}
+
+    nav{display:flex; gap:8px; align-items:center;}
+    nav a{
+      color:var(--muted); text-decoration:none; font-size:13px;
+      padding:8px 10px; border-radius:8px;
+    }
+    nav a.primary{
+      background:linear-gradient(90deg, rgba(110,231,183,0.10), rgba(96,165,250,0.06));
+      color:var(--accent); border:1px solid rgba(110,231,183,0.06);
+    }
+
+    main{display:grid; grid-template-columns: 1fr 360px; gap:var(--gap); align-items:start;}
+    @media (max-width:980px){ main{grid-template-columns: 1fr} }
+
+    .card{
+      background:linear-gradient(180deg,var(--card), rgba(8,24,39,0.6));
+      padding:16px;border-radius:12px;
+      border:1px solid rgba(255,255,255,0.02);
+      box-shadow: 0 6px 18px rgba(3,7,18,0.45);
+    }
+
+    .intro{display:flex; gap:16px; align-items:flex-start}
+    .photo{width:120px;height:120px;border-radius:12px;background:var(--glass);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted);overflow:hidden}
+    .intro h2{margin:0 0 8px 0}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted);font-size:12px;margin-top:6px}
+
+    .about-list{display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-top:12px}
+    .about-item{font-size:14px;color:var(--muted)}
+    .about-item b{color:#e6eef6;display:block;font-weight:600}
+
+    .skills{margin-top:14px}
+    .skill-pill{display:inline-block;padding:8px 10px;border-radius:8px;margin:6px 6px 0 0;background:rgba(255,255,255,0.03);font-size:13px;color:var(--muted)}
+
+    .projects{margin-top:12px;display:grid;gap:12px}
+    .proj{background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);display:flex;gap:12px;align-items:center;}
+    .proj .img{width:84px;height:64px;border-radius:8px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px}
+    .proj h4{margin:0;font-size:15px}
+    .proj p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
+
+    aside{display:flex;flex-direction:column; gap:var(--gap)}
+    .links a{display:block;color:var(--muted);text-decoration:none;padding:10px;border-radius:8px;margin-bottom:8px;background:rgba(255,255,255,0.02)}
+    .download{display:inline-block;padding:12px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#042033;font-weight:700;text-decoration:none;margin-top:8px}
+
+    .contact form{display:grid;gap:8px}
+    .contact input, .contact textarea{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:inherit;font-size:14px; resize:vertical;}
+    .btn{padding:10px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);cursor:pointer;}
+
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px;padding-top:14px;border-top:1px dashed rgba(255,255,255,0.02)}
+    .small{font-size:12px;color:var(--muted)}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);display:inline-block;margin-right:8px}
+  </style>
+</head>
+<body>
+  <div class="wrap" id="portfolio">
+    <header>
+      <div class="brand">
+        <div class="avatar" id="avatar">PM</div>
+        <div>
+          <h1 id="site-title">Suyash Mane</h1>
+          <p class="lead" id="subtitle">B.Tech — Zeal College of Engineering & Research, Pune</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#home" class="primary">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- LEFT -->
+      <div>
+        <section class="card" id="home">
+          <div class="intro">
+            <div class="photo" id="photo-placeholder">
+              <!-- Initials avatar used as no photo provided -->
+              <div style="text-align:center;">
+                <div style="font-weight:700;font-size:28px;color:#042033;">PM</div>
+                <div style="font-size:12px;margin-top:6px;color:var(--muted)">Zeal College of Engineering & Research</div>
+              </div>
+            </div>
+
+            <div>
+              <h2>Hi — I’m <span id="name">Suyash Mane</span></h2>
+              <div class="badge">B.Tech (AI & DS) — Student</div>
+
+              <p style="margin-top:10px;color:var(--muted)">I enjoy solving problems with code and building reliable, practical tools. Currently focused on Python, web development, and data handling. Open to internships and collaborative projects.</p>
+
+              <div class="about-list" style="margin-top:14px">
+                <div class="about-item"><b>Course</b> B.Tech — Artificial Intelligence & Data Science</div>
+                <div class="about-item"><b>College</b> Zeal College of Engineering & Research, Pune</div>
+                <div class="about-item"><b>Location</b> Pune, Maharashtra</div>
+                <div class="about-item"><b>Email</b> <a href="mailto:suyashmane2005@gmail.com" style="color:var(--accent)">suyashmane2005@gmail.com</a></div>
+                <div class="about-item"><b>Phone</b> <span style="color:var(--muted)">Hidden for privacy</span></div>
+                <div class="about-item"><b>Year</b> Second Year</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card skills" id="skills">
+          <h3>⚙️ Top Skills</h3>
+          <div style="margin-top:10px">
+            <div class="skill-pill">Python Programming</div>
+            <div class="skill-pill">Web Dev — HTML / CSS / JS</div>
+            <div class="skill-pill">Data Handling — Pandas / SQL</div>
+            <div class="skill-pill">Git & GitHub</div>
+            <div class="skill-pill">API Integration (Fetch)</div>
+            <div class="skill-pill">Problem Solving & Debugging</div>
+          </div>
+        </section>
+
+        <section class="card" id="projects">
+          <h3>📂 Selected Projects</h3>
+          <div class="projects" id="projects-list">
+            <!-- Project 1 -->
+            <div class="proj">
+              <div class="img">UI</div>
+              <div>
+                <h4>Strong Password Generator</h4>
+                <p>Generates secure random passwords with user-selected options and a visual strength meter. Tech: HTML, CSS, JavaScript + Python (Flask) backend.</p>
+                <p style="margin-top:6px"><a href="#" style="color:var(--accent)">GitHub (placeholder)</a></p>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="proj">
+              <div class="img">Site</div>
+              <div>
+                <h4>Student Portfolio Website</h4>
+                <p>Responsive single-page portfolio showcasing projects, skills, and contact info — built with HTML/CSS/JavaScript. Ready for deployment on GitHub Pages.</p>
+                <p style="margin-top:6px"><a href="#" style="color:var(--accent)">GitHub (placeholder)</a></p>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="proj">
+              <div class="img">API</div>
+              <div>
+                <h4>Weather App (API)</h4>
+                <p>Fetches live weather from OpenWeather and displays temperature, humidity and forecast. Tech: HTML, JS (Fetch API).</p>
+                <p style="margin-top:6px"><a href="#" style="color:var(--accent)">GitHub (placeholder)</a></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="certs">
+          <h3>🏆 Certifications & Activities</h3>
+          <ul style="margin:10px 0 0 18px;color:var(--muted)">
+            <li>Python Basics — Online Certificate</li>
+            <li>Web Development Fundamentals — Self-study</li>
+            <li>Participant — College Hackathon / Tech Fest</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- RIGHT -->
+      <aside>
+        <section class="card">
+          <h3>🔗 Important Links</h3>
+          <div class="links">
+            <a href="#" id="github-link">GitHub — github.com/your-username</a>
+            <a href="#" id="linkedin-link">LinkedIn — linkedin.com/in/your-username</a>
+            <a href="#" id="hr-link">HackerRank — placeholder</a>
+            <a href="#" id="lc-link">LeetCode — placeholder</a>
+          </div>
+
+          <a class="download" id="resume-link" href="resume.pdf" download>📄 Download Resume (PDF)</a>
+          <div style="font-size:12px;color:var(--muted);margin-top:8px">* Replace <code>resume.pdf</code> with your final resume file in the same folder.</div>
+        </section>
+
+        <section class="card contact" id="contact">
+          <h3>📞 Contact</h3>
+          <form onsubmit="sendMail(event)">
+            <input type="text" id="cname" placeholder="Your name" required>
+            <input type="email" id="cemail" placeholder="Your email" required>
+            <textarea id="cmsg" rows="4" placeholder="Message / Project idea" required></textarea>
+            <div style="display:flex;gap:10px;align-items:center">
+              <button class="btn" type="submit">Send (mail)</button>
+              <button class="btn" type="button" onclick="copyEmail()">Copy Email</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="card">
+          <h3>About This Submission</h3>
+          <div class="small">Zeal College of Engineering & Research, Pune — Student Portfolio Template</div>
+          <div style="margin-top:8px" class="small">© 2025 Pratham Mahajan</div>
+        </section>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="small">Record No.: ZCOER-ACAD/R/16L · Revision: 00 · Date: 01/04/2021 · Course: Digital Literacy & Applications</div>
+      <div style="margin-top:8px"><span class="tag">ZEAL COLLEGE OF ENGINEERING AND RESEARCH</span> <span class="tag">PUNE · INDIA</span></div>
+    </footer>
+  </div>
+
+  <script>
+    function sendMail(e){
+      e.preventDefault();
+      const name = document.getElementById('cname').value.trim();
+      const email = document.getElementById('cemail').value.trim();
+      const msg  = document.getElementById('cmsg').value.trim();
+      const recipient = 'prathammahajan100@gmail.com';
+      const subject = encodeURIComponent('Portfolio contact from ' + name);
+      const body = encodeURIComponent('Name: '+name + '\\nEmail: '+email + '\\n\\n' + msg);
+      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    }
+
+    function copyEmail(){
+      const email = 'prathammahajan100@gmail.com';
+      navigator.clipboard?.writeText(email);
+      alert('Email copied: ' + email);
+    }
+
+    (function init(){
+      // Insert real links here if you have them
+      document.getElementById('github-link').href = 'https://github.com/your-username';
+      document.getElementById('linkedin-link').href = 'https://www.linkedin.com/in/your-username';
+      document.getElementById('hr-link').href = '#';
+      document.getElementById('lc-link').href = '#';
+    })();
+  </script>
+</body>
+</html>
